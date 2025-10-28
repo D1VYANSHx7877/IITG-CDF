@@ -3,6 +3,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Card, CardContent } from "@/components/ui/card";
 import TestimonialCard from "@/components/TestimonialCard";
+import styles from "./Placements.module.css";
 
 const careerSupport = [
   {
@@ -156,8 +157,7 @@ const Placements = () => {
             {careerSupport.map((service, index) => (
               <Card 
                 key={index}
-                className="hover:shadow-large transition-all duration-300 hover:-translate-y-2"
-                style={{ animationDelay: `${index * 100}ms` }}
+                className={`hover:shadow-large transition-all duration-300 animate-fade-in ${styles[`delay${index * 100}`]}`}
               >
                 <CardContent className="p-6">
                   <div className="w-12 h-12 bg-gradient-primary rounded-lg flex items-center justify-center mb-4">
@@ -288,7 +288,7 @@ const Placements = () => {
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {testimonials.map((testimonial, index) => (
-                <div key={index} style={{ animationDelay: `${index * 100}ms` }}>
+                <div key={index} className={`animate-fade-in ${styles[`delay${index * 100}`]}`}>
                   <TestimonialCard {...testimonial} />
                 </div>
               ))}
