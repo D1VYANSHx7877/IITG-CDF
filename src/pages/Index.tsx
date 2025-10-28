@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import ProgramCard from "@/components/ProgramCard";
 import { Button } from "@/components/ui/button";
 import Board from "@/components/Board";
+import BrandGrid from "@/components/BrandGrid";
 import styles from "./Index.module.css";
 
 const Index = () => {
@@ -161,6 +162,23 @@ const Index = () => {
       {/* Board of Directors Section */}
       <section className="bg-muted/30">
         <Board />
+        
+        {/* Add Partner Brands and Trusted-by sections on the homepage below Board */}
+        <BrandGrid
+          title="OUR HIRING PARTNERS"
+          subtitle="Leading organizations that collaborate with IIT Gandhinagar to empower future-ready talent."
+          brands={['Honeywell','Amazon','Tesla','LSE','JP Morgan','EY','Trend Micro','Accenture','Nestle','BlackRock','Deloitte','Apple']}
+          cols="grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4"
+          bgClass="bg-background"
+        />
+
+        <BrandGrid
+          title="Trusted by Leading Companies"
+          subtitle="Our graduates are trusted by these industry leaders."
+          brands={['Honeywell','Amazon','Google','Microsoft','Siemens','Infosys','Accenture','IBM']}
+          cols="grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-8"
+          bgClass="bg-background"
+        />
       </section>
 
       {/* CTA Section */}

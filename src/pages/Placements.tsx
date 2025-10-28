@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import { Card, CardContent } from "@/components/ui/card";
 import TestimonialCard from "@/components/TestimonialCard";
 import styles from "./Placements.module.css";
+import BrandGrid from "@/components/BrandGrid";
 
 const careerSupport = [
   {
@@ -172,29 +173,23 @@ const Placements = () => {
         </div>
       </section>
 
-      {/* Hiring Partners */}
-      <section className="py-16 lg:py-24 bg-muted/50">
-        <div className="container mx-auto px-4 lg:px-8">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-8 text-center">
-              Our Hiring Partners
-            </h2>
-            <div className="space-y-4">
-              {hiringPartners.map((category, index) => (
-                <Card key={index} className="shadow-medium">
-                  <CardContent className="p-6">
-                    <h3 className="font-bold text-foreground mb-3">{category.category}</h3>
-                    <p className="text-muted-foreground text-sm">{category.companies}</p>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-            <p className="text-sm text-muted-foreground text-center mt-6">
-              * Hiring partners list is indicative and subject to change based on industry demand and recruitment cycles.
-            </p>
-          </div>
-        </div>
-      </section>
+      {/* Partner Brands (Replaces 'Our Hiring Partners') */}
+      <BrandGrid
+        title="OUR HIRING PARTNERS"
+        subtitle="Leading organizations that collaborate with IIT Gandhinagar to empower future-ready talent."
+        brands={['Honeywell','Amazon','Tesla','LSE','JP Morgan','EY','Trend Micro','Accenture','Nestle','BlackRock','Deloitte','Apple']}
+        cols="grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4"
+         bgClass="bg-background"
+      />
+
+      {/* Trusted by Leading Companies (matching styling) */}
+      <BrandGrid
+        title="Trusted by Leading Companies"
+        subtitle="Our graduates are trusted by these industry leaders."
+        brands={['Honeywell','Amazon','Google','Microsoft','Siemens','Infosys','Accenture','IBM']}
+        cols="grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-8"
+         bgClass="bg-background"
+      />
 
       {/* Career Outcomes */}
       <section className="py-16 lg:py-24">
