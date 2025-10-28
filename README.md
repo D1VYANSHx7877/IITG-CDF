@@ -21,8 +21,8 @@ A modern, responsive website for IIT Gandhinagar's Postgraduate Diploma Programs
 
 ```bash
 # Clone the repository
-git clone <your-repo-url>
-cd iitgn-pgd-website
+git clone https://github.com/D1VYANSHx7877/IITG-CDF.git
+cd IITG-CDF
 
 # Install dependencies
 npm install
@@ -33,11 +33,12 @@ npm run dev
 
 Visit `http://localhost:8080` to see the site.
 
-## 🛠 Development
+## 🛠 Development Setup
 
 ### Prerequisites
 
-- Node.js 18+ and npm
+- Node.js 18+
+- npm
 - Basic knowledge of React, TypeScript, and Tailwind CSS
 
 ### Available Scripts
@@ -51,14 +52,14 @@ Visit `http://localhost:8080` to see the site.
 
 ```
 src/
-├── components/    # Reusable UI components
-├── pages/        # Page components for routing
+├── components/   # Reusable UI elements
+├── pages/        # Page-level components
 ├── hooks/        # Custom React hooks
 ├── lib/          # Utility functions and constants
 └── App.tsx       # Root component
 
-public/           # Static assets
-└── logo.png      # Site logo & favicon
+public/           
+└── logo.png      # Branding assets
 ```
 
 ## 🎨 UI Components
