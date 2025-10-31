@@ -1,4 +1,4 @@
-import { Database, Code, Brain, CheckCircle } from "lucide-react";
+import { Database, Code, Brain, CheckCircle, Download, ArrowRight } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -7,9 +7,10 @@ import { Link } from "react-router-dom";
 
 const programs = [
   {
-    title: "PG Diploma in Data Science Engineering",
+    title: "Competency Development Foundation Program in Data Science Engineering",
     icon: <Database className="w-6 h-6 text-primary-foreground" />,
     description: "Learn to design, implement, and scale data pipelines and machine learning infrastructure.",
+    brochure: "/brochures/data-science.pdf",
     highlights: [
       "AutoML and big data platforms",
       "Cloud data warehousing",
@@ -19,9 +20,10 @@ const programs = [
     ],
   },
   {
-    title: "PG Diploma in Software Development with GenAI and Agentic AI",
+    title: "Competency Development Foundation Program in Software Development with GenAI and Agentic AI",
     icon: <Code className="w-6 h-6 text-primary-foreground" />,
     description: "Explore generative AI and agentic AI techniques applied to software development life cycles.",
+    brochure: "/brochures/software-genai.pdf",
     highlights: [
       "Modern DevOps practices",
       "Cloud-native architectures",
@@ -31,9 +33,10 @@ const programs = [
     ],
   },
   {
-    title: "PG Diploma in AI & Agentic AI Engineering",
+    title: "Competency Development Foundation Program in AI & Agentic AI Engineering",
     icon: <Brain className="w-6 h-6 text-primary-foreground" />,
     description: "Deep dive into advanced AI methodologies, agentic systems, ethical AI, and responsible governance.",
+    brochure: "/brochures/ai-agentic.pdf",
     highlights: [
       "Advanced AI methodologies",
       "Agentic AI systems",
@@ -52,13 +55,13 @@ const Programs = () => {
       {/* Hero Section */}
       <section className="pt-32 pb-16 lg:pt-40 lg:pb-24 bg-gradient-subtle">
         <div className="container mx-auto px-4 lg:px-8">
-          <div className="max-w-3xl mx-auto text-center animate-fade-in-up">
+            <div className="max-w-3xl mx-auto text-center animate-fade-in-up">
             <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold text-foreground mb-6">
               Our <span className="bg-gradient-primary bg-clip-text text-transparent">Programs</span>
             </h1>
             <p className="text-lg lg:text-xl text-muted-foreground">
-              Explore IIT Gandhinagar's cutting-edge Postgraduate Diploma Programs designed to build 
-              industry-ready skills in Data Science, AI, and Software Development.
+              Explore IIT Gandhinagar's Competency Development Foundation Programs designed to build 
+              career-ready, skill-focused learning in Data Science, AI, and Software Development.
             </p>
           </div>
         </div>
@@ -85,9 +88,33 @@ const Programs = () => {
                   
                   <div>
                     <CardHeader>
-                      <CardTitle className="text-2xl lg:text-3xl font-bold text-foreground mb-4">
-                        {program.title}
-                      </CardTitle>
+                      <div className="flex items-center space-x-3">
+                        <div className="flex items-center space-x-4">
+                          <CardTitle className="text-2xl lg:text-3xl font-bold text-foreground mb-0">
+                            {program.title}
+                          </CardTitle>
+                          {program.brochure && (
+                            <Button 
+                              asChild
+                              variant="outline" 
+                              size="sm"
+                              className="bg-primary-50 border-primary-100 text-primary hover:bg-primary-100 hover:text-primary-dark group"
+                            >
+                              <a
+                                href={program.brochure}
+                                download
+                                target="_blank"
+                                rel="noreferrer"
+                                aria-label={`Download brochure for ${program.title}`}
+                                className="flex items-center gap-2"
+                              >
+                                <span>Brochure</span>
+                                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                              </a>
+                            </Button>
+                          )}
+                        </div>
+                      </div>
                       <CardDescription className="text-base lg:text-lg text-muted-foreground">
                         {program.description}
                       </CardDescription>

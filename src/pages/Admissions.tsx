@@ -40,7 +40,7 @@ const Admissions = () => {
               Start Your <span className="bg-gradient-primary bg-clip-text text-transparent">Application</span>
             </h1>
             <p className="text-lg lg:text-xl text-muted-foreground mb-8">
-              Apply for IIT Gandhinagar's Postgraduate Diploma Programs and take the next step in your career.
+              Apply for IIT Gandhinagar's Competency Development Foundation Programs and take the next step in your career.
             </p>
             <Button size="lg" className="bg-gradient-primary hover:opacity-90 shadow-medium">
               Begin Application
@@ -100,7 +100,7 @@ const Admissions = () => {
                   Eligibility Criteria
                 </CardTitle>
                 <CardDescription className="text-base lg:text-lg">
-                  General requirements for admission to our PG Diploma programs
+                  General requirements for admission to our Competency Development Foundation Programs
                 </CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
@@ -141,8 +141,8 @@ const Admissions = () => {
             <h2 className="text-3xl lg:text-4xl font-bold text-primary-foreground mb-4">
               Ready to Apply?
             </h2>
-            <p className="text-lg text-primary-foreground/90 mb-8 max-w-2xl mx-auto">
-              Don't miss this opportunity to advance your career with an IIT Gandhinagar PG Diploma.
+              <p className="text-lg text-primary-foreground/90 mb-8 max-w-2xl mx-auto">
+              Don't miss this opportunity to advance your career with an IIT Gandhinagar Competency Development Foundation Program.
             </p>
             <Button 
               size="lg" 

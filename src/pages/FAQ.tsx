@@ -12,11 +12,11 @@ const generalFAQs = [
   },
   {
     question: "Are these programs recognized?",
-    answer: "Yes. These are Post Graduate Diploma programs offered by IIT Gandhinagar, one of India's premier institutions. While not equivalent to a Master's degree, they are highly valued by employers for their practical, skill-oriented curriculum.",
+    answer: "Yes. These are Competency Development Foundation Programs offered by IIT Gandhinagar, one of India's premier institutions. While not equivalent to a Master's degree, they are highly valued by employers for their practical, skill-oriented curriculum.",
   },
   {
-    question: "What is the difference between a PG Diploma and a Master's degree?",
-    answer: "A PG Diploma is a focused, industry-oriented program (typically 6-12 months) emphasizing practical skills and job readiness, whereas a Master's degree is a longer academic program (2 years) with more emphasis on theory and research. PG Diplomas are ideal for quick career transitions and upskilling.",
+    question: "What is the difference between a Competency Development Foundation Program and a Master's degree?",
+    answer: "A Competency Development Foundation Program (PG-level professional program) is a focused, industry-oriented offering (typically 6-12 months) emphasizing practical skills and job readiness, whereas a Master's degree is a longer academic program (2 years) with more emphasis on theory and research. These programs are ideal for quick career transitions and upskilling.",
   },
 ];
 
@@ -58,7 +58,7 @@ const programFAQs = [
   },
   {
     question: "Will I receive an IIT Gandhinagar certificate?",
-    answer: "Yes. Upon successful completion, you will receive a Post Graduate Diploma certificate from IIT Gandhinagar.",
+    answer: "Yes. Upon successful completion, you will receive a Competency Development Foundation Program certificate from IIT Gandhinagar.",
   },
   {
     question: "Are there any prerequisites I should complete before joining?",
@@ -141,11 +141,11 @@ const technicalFAQs = [
 const postProgramFAQs = [
   {
     question: "What happens after I complete the program?",
-    answer: "You receive: IIT Gandhinagar PG Diploma certificate, access to alumni network, continued career support for job search and career transitions, and certification exam vouchers (for AWS/Azure/GCP certifications).",
+    answer: "You receive: IIT Gandhinagar Competency Development Foundation Program certificate, access to alumni network, continued career support for job search and career transitions, and certification exam vouchers (for AWS/Azure/GCP certifications).",
   },
   {
     question: "Can I pursue further studies after this program?",
-    answer: "Yes. Many graduates go on to pursue Master's degrees (M.Tech, MS) or specialized certifications. The PG Diploma strengthens your profile for higher studies.",
+    answer: "Yes. Many graduates go on to pursue Master's degrees (M.Tech, MS) or specialized certifications. The Competency Development Foundation Program strengthens your profile for higher studies.",
   },
   {
     question: "Will I remain part of the IIT Gandhinagar community?",

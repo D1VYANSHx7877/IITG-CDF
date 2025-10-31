@@ -16,29 +16,30 @@ const Header = () => {
     { path: "/admissions", label: "Admissions" },
     { path: "/campus-life", label: "Campus Life" },
     { path: "/placements", label: "Placements" },
-    { path: "/faculty", label: "Faculty" },
     { path: "/faq", label: "FAQ" },
     { path: "/contact", label: "Contact" },
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-lg border-b border-border">
+    <header className="sticky top-0 bg-white z-50 shadow-md">
       <div className="container mx-auto px-4 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-3 group">
-            <div className="w-10 h-10 lg:w-12 lg:h-12 rounded-lg flex items-center justify-center shadow-soft group-hover:shadow-medium transition-all duration-300 shadow-gradient-primary overflow-hidden">
-              <img
-                src="/logo.png"
-                alt="IIT Gandhinagar logo"
-                className="w-full h-full object-contain p-1"
-                loading="lazy"
-                decoding="async"
-              />
-            </div>
-            <div className="hidden sm:block">
-              <h1 className="text-lg lg:text-xl font-bold text-foreground">IIT Gandhinagar</h1>
-              <p className="text-xs text-muted-foreground">PG Diploma Programs</p>
+          <Link to="/" className="flex items-center group">
+            <div className="flex items-center">
+              <div className="w-[54px] sm:w-[72px] h-auto rounded-lg flex items-center justify-center shadow-soft group-hover:shadow-medium transition-all duration-300 overflow-hidden">
+                <img
+                  src="/logo.png"
+                  alt="IIT Gandhinagar logo"
+                  className="w-full h-auto object-contain p-1"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <div className="ml-3 hidden sm:flex flex-col">
+                <h1 className="text-base lg:text-lg font-bold text-foreground leading-tight">IIT Gandhinagar</h1>
+                <p className="text-xs text-muted-foreground">CDF Programs</p>
+              </div>
             </div>
           </Link>
 

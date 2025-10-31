@@ -37,20 +37,14 @@ const features = [
   },
 ];
 
-const dayInLife = [
-  { time: "7:00 AM", title: "Morning Routine", description: "Wake up, morning workout/yoga (optional)" },
-  { time: "8:00 AM", title: "Breakfast", description: "Nutritious breakfast at campus mess" },
-  { time: "9:00 AM", title: "Morning Lectures", description: "Theory sessions with IIT faculty" },
-  { time: "12:30 PM", title: "Lunch Break", description: "Meal and relaxation time" },
-  { time: "1:30 PM", title: "Afternoon Labs", description: "Hands-on projects and practical work" },
-  { time: "5:00 PM", title: "Break Time", description: "Sports, relaxation, or library" },
-  { time: "6:00 PM", title: "Study Time", description: "Group projects or self-study" },
-  { time: "8:00 PM", title: "Dinner", description: "Evening meal at mess" },
-  { time: "9:00 PM", title: "Evening Activities", description: "Assignments, coding practice, or socializing" },
-  { time: "11:00 PM", title: "Wind Down", description: "Relaxation and sleep" },
-];
+// dayInLife schedule removed — section omitted per content update
 
 const whyResidential = [
+  {
+    icon: <School className="w-6 h-6" />,
+    title: "IIT Culture",
+    description: "Experience the culture of excellence, innovation, and integrity that defines IIT Gandhinagar.",
+  },
   {
     icon: <Users className="w-6 h-6" />,
     title: "Collaborative Environment",
@@ -70,11 +64,6 @@ const whyResidential = [
     icon: <Target className="w-6 h-6" />,
     title: "Focus & Discipline",
     description: "Structured campus life helps you stay focused on your goals without distractions.",
-  },
-  {
-    icon: <School className="w-6 h-6" />,
-    title: "IIT Culture",
-    description: "Experience the culture of excellence, innovation, and integrity that defines IIT Gandhinagar.",
   },
 ];
 
@@ -130,30 +119,7 @@ const CampusLife = () => {
         </div>
       </section>
 
-      {/* A Day in the Life */}
-      <section className="py-16 lg:py-24 bg-muted/50">
-        <div className="container mx-auto px-4 lg:px-8">
-          <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-12">
-              <Clock className="w-16 h-16 text-primary mx-auto mb-6" />
-              <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
-                A Day in the Life of an IITGN-CDF Student
-              </h2>
-              <p className="text-lg text-muted-foreground">
-                Experience a structured yet enriching daily routine designed for maximum learning and growth.
-              </p>
-            </div>
-            <Card className="shadow-large">
-              <CardContent className="p-8">
-                <TimelineComponent steps={dayInLife} />
-              </CardContent>
-            </Card>
-            <p className="text-sm text-muted-foreground text-center mt-4">
-              * Actual schedule varies by program and weekly timetable
-            </p>
-          </div>
-        </div>
-      </section>
+      {/* 'A Day in the Life' section removed per content update */}
 
       {/* Why Residential Learning */}
       <section className="py-16 lg:py-24">

@@ -72,8 +72,7 @@ const careerOutcomes = [
       "MLOps Engineer",
       "AI Consultant / GenAI Consultant",
     ],
-    avgSalary: "₹6-15 LPA",
-    topOffers: "₹18-30 LPA+",
+    // salary details removed per content update; retain only skill/role outcomes
   },
   {
     program: "Software Development with GenAI",
@@ -84,8 +83,7 @@ const careerOutcomes = [
       "DevOps Engineer",
       "Software Development Engineer (SDE)",
     ],
-    avgSalary: "₹5-12 LPA",
-    topOffers: "₹15-25 LPA+",
+    // salary details removed per content update; retain only skill/role outcomes
   },
   {
     program: "Data Science Engineering",
@@ -96,8 +94,7 @@ const careerOutcomes = [
       "Analytics Engineer",
       "MLOps Engineer",
     ],
-    avgSalary: "₹6-14 LPA",
-    topOffers: "₹16-28 LPA+",
+    // salary details removed per content update; retain only skill/role outcomes
   },
 ];
 
@@ -219,16 +216,7 @@ const Placements = () => {
                       </ul>
                     </div>
 
-                    <div className="space-y-2 p-4 bg-muted/50 rounded-lg">
-                      <div>
-                        <span className="text-sm font-semibold text-foreground">Average Salary: </span>
-                        <span className="text-sm text-muted-foreground">{outcome.avgSalary}</span>
-                      </div>
-                      <div>
-                        <span className="text-sm font-semibold text-foreground">Top Offers: </span>
-                        <span className="text-sm text-primary font-semibold">{outcome.topOffers}</span>
-                      </div>
-                    </div>
+                    {/* Salary details removed — showing skill-based outcomes only */}
                   </CardContent>
                 </Card>
               ))}

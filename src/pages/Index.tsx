@@ -14,14 +14,14 @@ const Index = () => {
       <Header />
 
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 lg:pt-40 lg:pb-32 overflow-hidden">
+      <section className="relative pt-24 pb-20 lg:pt-32 lg:pb-32 overflow-hidden">
         {/* Gradient Background */}
         <div className="absolute inset-0 bg-gradient-hero opacity-10" />
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/50 to-background" />
 
         <div className="container relative mx-auto px-4 lg:px-8">
           <div className="max-w-4xl mx-auto text-center animate-fade-in-up">
-            <div className="inline-flex items-center space-x-2 bg-primary/10 text-primary px-4 py-2 rounded-full mb-6 animate-fade-in">
+            <div className="inline-flex items-center space-x-2 bg-primary/10 text-primary px-4 py-2 rounded-full mb-4 animate-fade-in">
               <Sparkles className="w-4 h-4" />
               <span className="text-sm font-medium">
                 IIT Gandhinagar Excellence
@@ -31,13 +31,13 @@ const Index = () => {
             <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-foreground mb-6 leading-tight">
               Build Your Future with{" "}
               <span className="bg-gradient-primary bg-clip-text text-transparent">
-                Industry-Ready Skills
+                Career-ready skills
               </span>
             </h1>
 
             <p className="text-lg lg:text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
-              Transform your career with IIT Gandhinagar's Postgraduate Diploma
-              Programs in Data Science, AI, and Software Development with
+              Transform your career with IIT Gandhinagar's Competency Development
+              Foundation Programs in Data Science, AI, and Software Development with
               Generative AI.
             </p>
 
@@ -77,13 +77,13 @@ const Index = () => {
               },
               {
                 icon: <Users className="w-6 h-6" />,
-                value: "1000+",
-                label: "Students",
+                value: "Growing",
+                label: "Community of learners",
               },
               {
                 icon: <BookOpen className="w-6 h-6" />,
                 value: "100%",
-                label: "Industry Ready",
+                label: "Career-ready Skills",
               },
             ].map((stat, index) => (
               <div
@@ -99,29 +99,6 @@ const Index = () => {
                 <div className="text-muted-foreground">{stat.label}</div>
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* About Section */}
-      <section className="py-16 lg:py-24">
-        <div className="container mx-auto px-4 lg:px-8">
-          <div className="max-w-4xl mx-auto text-center mb-16 animate-fade-in">
-            <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-foreground mb-6">
-              Welcome to IIT Gandhinagar
-            </h2>
-            <p className="text-lg text-muted-foreground mb-6">
-              As one of India's premier engineering institutes, IIT Gandhinagar
-              offers transformational Postgraduate Diploma programs designed to
-              bridge academia with industry needs in the fields of Data Science,
-              Artificial Intelligence, and Software Development with Generative
-              AI.
-            </p>
-            <p className="text-lg text-muted-foreground">
-              Our programs are structured under the Competency Advancement
-              Model, focusing on applied skills, AI-assisted learning, and
-              real-world industry relevance.
-            </p>
           </div>
         </div>
       </section>
@@ -144,16 +121,19 @@ const Index = () => {
               title="Data Science Engineering"
               description="Learn to design, implement, and scale data pipelines and machine learning infrastructure with hands-on expertise in AutoML, MLOps, and cloud platforms."
               delay={0}
+              brochure="/brochures/data-science.pdf"
             />
             <ProgramCard
               title="Software Development with GenAI"
               description="Master modern DevOps, cloud-native architectures, and AI-augmented software applications with generative and agentic AI techniques."
               delay={100}
+              brochure="/brochures/software-genai.pdf"
             />
             <ProgramCard
               title="AI & Agentic AI Engineering"
               description="Deep dive into advanced AI methodologies, agentic systems, ethical AI, and responsible governance for scalable AI solutions."
               delay={200}
+              brochure="/brochures/ai-agentic.pdf"
             />
           </div>
         </div>
@@ -189,7 +169,7 @@ const Index = () => {
               Advance Your Career Today
             </h2>
             <p className="text-lg lg:text-xl text-primary-foreground/90 mb-8 max-w-2xl mx-auto">
-              Join our PG Diploma programs and build expertise that opens doors
+              Join our Competency Development Foundation Programs and build expertise that opens doors
               to roles such as Data Scientist, AI Engineer, Cloud Data Engineer,
               and more.
             </p>

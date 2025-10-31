@@ -16,30 +16,30 @@ const members: Member[] = [
   {
     id: "rajat-moona",
     name: "Prof. Rajat Moona",
-    title: "Director, IIT Gandhinagar",
-    bio: "Brief one-line bio or affiliation goes here.",
+    title: "Director of IIT Gandhinagar",
+    bio: "Former Director General of CDAC, known for his work in secure computing and governance",
     imgSrc: "./images/Board_1.jpg", // <- change if using Drive or CDN
     linkedin: "",
   },
   {
     id: "amit-prashant",
     name: "Prof. Amit Prashant",
-    title: "Dean, IIT Gandhinagar",
-    bio: "Brief one-line bio or affiliation goes here.",
+    title: "Dean of External Relations",
+    bio: "Expert in geotechnical engineering with a PhD from University of Tennessee",
     imgSrc: "./images/Board_2.jpg",
   },
   {
     id: "pk-chopra",
     name: "P. K. Chopra",
-    title: "Board Member",
-    bio: "Brief one-line bio or affiliation goes here.",
+    title: "Registrar, IIT Gandhinagar",
+    bio: "Director at IITGN Innovation Center",
     imgSrc: "./images/Board_3.jpg",
   },
   {
     id: "sam-placid",
     name: "Prof. Sam Placid",
-    title: "Board Member",
-    bio: "Brief one-line bio or affiliation goes here.",
+    title: "Advisor, IITGN CAA",
+    bio: "Leading industry-aligned programs in GenAI and Data Science",
     imgSrc: "./images/Board_4.jpg",
   },
 ];
@@ -59,35 +59,35 @@ export const Board: React.FC<{ membersList?: Member[] }> = ({ membersList }) => 
           </p>
         </div>
 
-        <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+        <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
           {list.map((m, index) => (
             <div
               key={m.id}
-              className={`group overflow-hidden rounded-2xl bg-card shadow-soft hover:shadow-medium transition-all duration-300 animate-fade-in ${styles[`delay${index * 100}`]}`}
+              className={`group bg-card shadow-soft hover:shadow-medium transition-all duration-300 animate-fade-in ${styles[`delay${index * 100}`]} p-6 text-center rounded-lg`}
             >
-              <div className="aspect-[4/5] w-full relative">
+              <div className="mb-4 mx-auto">
                 <img
                   src={m.imgSrc}
                   alt={`Portrait of ${m.name}`}
-                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                  className="rounded-full object-cover w-[120px] h-[120px] mx-auto shadow-md transition-transform duration-300 group-hover:scale-105"
                   loading="lazy"
                 />
-                <div className="absolute bottom-0 left-0 right-0 bg-white p-4">
-                  <h3 className="text-xl font-semibold text-gray-900 mb-1">{m.name}</h3>
-                  <p className="text-sm text-gray-600">{m.title}</p>
-                  {m.bio && <p className="mt-2 text-sm text-gray-500">{m.bio}</p>}
-                  <div className="mt-3 flex items-center justify-center space-x-3">
-                    {m.linkedin && (
-                      <a href={m.linkedin} className="text-primary hover:underline text-sm">
-                        LinkedIn
-                      </a>
-                    )}
-                    {m.email && (
-                      <a href={`mailto:${m.email}`} className="text-muted-foreground hover:underline text-sm">
-                        Email
-                      </a>
-                    )}
-                  </div>
+              </div>
+              <div className="text-center">
+                <h3 className="text-xl font-semibold text-foreground mb-1">{m.name}</h3>
+                <p className="text-sm text-primary mb-2">{m.title}</p>
+                {m.bio && <p className="text-sm text-muted-foreground">{m.bio}</p>}
+                <div className="mt-3 flex items-center justify-center space-x-3">
+                  {m.linkedin && (
+                    <a href={m.linkedin} className="text-primary hover:underline text-sm">
+                      LinkedIn
+                    </a>
+                  )}
+                  {m.email && (
+                    <a href={`mailto:${m.email}`} className="text-muted-foreground hover:underline text-sm">
+                      Email
+                    </a>
+                  )}
                 </div>
               </div>
             </div>

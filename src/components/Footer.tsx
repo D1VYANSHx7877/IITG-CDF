@@ -14,11 +14,11 @@ const Footer = () => {
               </div>
               <div>
                 <h3 className="font-bold text-foreground">IIT Gandhinagar</h3>
-                <p className="text-xs text-muted-foreground">PG Diploma Programs</p>
+                <p className="text-xs text-muted-foreground">Competency Development Foundation Programs</p>
               </div>
             </div>
             <p className="text-sm text-muted-foreground">
-              Empowering professionals with industry-ready skills in Data Science, AI, and Software Development.
+              Empowering professionals with career-ready, skill-focused learning in Data Science, AI, and Software Development.
             </p>
           </div>
 
