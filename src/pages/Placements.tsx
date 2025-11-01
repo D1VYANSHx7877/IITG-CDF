@@ -4,7 +4,7 @@ import Footer from "@/components/Footer";
 import { Card, CardContent } from "@/components/ui/card";
 import TestimonialCard from "@/components/TestimonialCard";
 import styles from "./Placements.module.css";
-import BrandGrid from "@/components/BrandGrid";
+import LogoMarquee from "@/components/LogoMarquee";
 
 const careerSupport = [
   {
@@ -171,22 +171,47 @@ const Placements = () => {
       </section>
 
       {/* Partner Brands (Replaces 'Our Hiring Partners') */}
-      <BrandGrid
-        title="OUR HIRING PARTNERS"
-        subtitle="Leading organizations that collaborate with IIT Gandhinagar to empower future-ready talent."
-        brands={['Honeywell','Amazon','Tesla','LSE','JP Morgan','EY','Trend Micro','Accenture','Nestle','BlackRock','Deloitte','Apple']}
-        cols="grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4"
-         bgClass="bg-background"
-      />
+      {/* Replace BrandGrid with marquee rows for partner logos (two hiring rows, one trusted row) */}
+      {(() => {
+        const hiringPaths = [
+          '/OUR%20HIRING%20PARTNERS/Apple.svg',
+          '/OUR%20HIRING%20PARTNERS/BlackRock.svg',
+          '/OUR%20HIRING%20PARTNERS/Deloitte..svg',
+          '/OUR%20HIRING%20PARTNERS/EY.svg',
+          '/OUR%20HIRING%20PARTNERS/JPM.svg',
+          '/OUR%20HIRING%20PARTNERS/LSE.svg',
+          '/OUR%20HIRING%20PARTNERS/MicroTrend.svg',
+          '/OUR%20HIRING%20PARTNERS/Nestle.svg',
+          '/OUR%20HIRING%20PARTNERS/TESLA.svg',
+        ];
 
-      {/* Trusted by Leading Companies (matching styling) */}
-      <BrandGrid
-        title="Trusted by Leading Companies"
-        subtitle="Our graduates are trusted by these industry leaders."
-        brands={['Honeywell','Amazon','Google','Microsoft','Siemens','Infosys','Accenture','IBM']}
-        cols="grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-8"
-         bgClass="bg-background"
-      />
+        const trustedPaths = [
+          '/TRUSTED%20BY%20LEADING%20COMAPNIES/Accenture.svg',
+          '/TRUSTED%20BY%20LEADING%20COMAPNIES/Amazon.svg',
+          '/TRUSTED%20BY%20LEADING%20COMAPNIES/Google.svg',
+          '/TRUSTED%20BY%20LEADING%20COMAPNIES/Honeywell.svg',
+          '/TRUSTED%20BY%20LEADING%20COMAPNIES/IBM.svg',
+          '/TRUSTED%20BY%20LEADING%20COMAPNIES/Infosys.svg',
+          '/TRUSTED%20BY%20LEADING%20COMAPNIES/Microsoft.svg',
+          '/TRUSTED%20BY%20LEADING%20COMAPNIES/Siemens.svg',
+        ];
+
+        return (
+          <div className="space-y-8">
+            <div className="bg-card rounded-2xl p-6">
+              <h3 className="text-center text-3xl lg:text-4xl font-extrabold text-foreground/90 mb-4">Our Hiring Partners</h3>
+              <p className="text-center text-sm text-muted-foreground mb-4">Organizations that collaborate with IIT Gandhinagar to empower future-ready talent.</p>
+              <LogoMarquee hiringTop={{ logos: hiringPaths, leftToRight: true, duration: 18 }} hiringBottom={{ logos: hiringPaths, leftToRight: false, duration: 20 }} />
+            </div>
+
+            <div className="bg-card rounded-2xl p-6">
+              <h3 className="text-center text-3xl lg:text-4xl font-extrabold text-foreground/90 mb-4">Trusted by Leading Companies</h3>
+              <p className="text-center text-sm text-muted-foreground mb-4">Our graduates are trusted by these industry leaders.</p>
+              <LogoMarquee trusted={{ logos: trustedPaths, leftToRight: true, duration: 22 }} />
+            </div>
+          </div>
+        );
+      })()}
 
       {/* Career Outcomes */}
       <section className="py-16 lg:py-24">

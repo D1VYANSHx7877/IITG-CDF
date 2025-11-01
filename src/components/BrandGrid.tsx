@@ -7,6 +7,8 @@ type Props = {
   brands: string[];
   cols?: string; // tailwind grid cols classes override
   bgClass?: string; // optional background class to apply to the section
+  /** public directory path to look for logos (e.g. '/OUR%20HIRING%20PARTNERS') */
+  logoDir?: string;
 };
 
 const slug = (name: string) =>
@@ -25,7 +27,7 @@ const brandFontClass = (name: string) => {
   return '';
 };
 
-const BrandGrid: React.FC<Props> = ({ title, subtitle, brands, cols, bgClass }) => {
+const BrandGrid: React.FC<Props> = ({ title, subtitle, brands, cols, bgClass, logoDir }) => {
   return (
     <section className={`${bgClass ?? ''} py-12 lg:py-16`}>
       <div className="container mx-auto px-4 lg:px-8">
@@ -36,7 +38,7 @@ const BrandGrid: React.FC<Props> = ({ title, subtitle, brands, cols, bgClass }) 
 
         <div className={`grid ${cols || 'grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6'} gap-6 max-w-7xl mx-auto`}>
           {brands.map((brand) => (
-            <BrandTile key={brand} brand={brand} />
+            <BrandTile key={brand} brand={brand} logoDir={logoDir} />
           ))}
         </div>
       </div>
@@ -44,22 +46,33 @@ const BrandGrid: React.FC<Props> = ({ title, subtitle, brands, cols, bgClass }) 
   );
 };
 
-const BrandTile: React.FC<{ brand: string }> = ({ brand }) => {
+const BrandTile: React.FC<{ brand: string; logoDir?: string }> = ({ brand, logoDir }) => {
   const [hasLogo, setHasLogo] = useState(true);
   const s = slug(brand);
-  const logoPath = `/images/brands/${s}.png`;
+
+  // prefer svg (user provided SVGs), fallback to png in /images/brands
+  const svgPath = `${logoDir ? logoDir : '/images/brands'}/${s}.svg`;
+  const pngPath = `/images/brands/${s}.png`;
+  const [src, setSrc] = useState<string>(svgPath);
+
+  const handleError = () => {
+    if (src.endsWith('.svg')) {
+      setSrc(pngPath);
+    } else {
+      setHasLogo(false);
+    }
+  };
 
   return (
     <div className={`flex flex-col items-center justify-center p-6 bg-white rounded-2xl shadow-medium border ${styles.tile}`}>
       {hasLogo ? (
-        // image will fallback to onError -> show text
-        // keep img accessible and centered
+        // image will fallback via onError handler -> show text if neither svg nor png exist
         // eslint-disable-next-line @next/next/no-img-element
         <img
-          src={logoPath}
+          src={src}
           alt={brand}
           className={`${styles.logo}`}
-          onError={() => setHasLogo(false)}
+          onError={handleError}
         />
       ) : (
         <div className={`${styles.brandPlaceholder}`}>

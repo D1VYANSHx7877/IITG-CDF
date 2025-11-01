@@ -63,20 +63,23 @@ export const Board: React.FC<{ membersList?: Member[] }> = ({ membersList }) => 
           {list.map((m, index) => (
             <div
               key={m.id}
-              className={`group bg-card shadow-soft hover:shadow-medium transition-all duration-300 animate-fade-in ${styles[`delay${index * 100}`]} p-6 text-center rounded-lg`}
+              className={`group bg-card shadow-soft hover:shadow-medium transition-all duration-300 animate-fade-in ${styles[`delay${index * 100}`]} p-6 rounded-2xl`}
             >
-              <div className="mb-4 mx-auto">
-                <img
-                  src={m.imgSrc}
-                  alt={`Portrait of ${m.name}`}
-                  className="rounded-full object-cover w-[120px] h-[120px] mx-auto shadow-md transition-transform duration-300 group-hover:scale-105"
-                  loading="lazy"
-                />
+              <div className="-mt-12 mb-4 mx-auto w-fit">
+                <div className="rounded-full bg-gradient-to-br from-primary/10 to-primary/5 p-1 shadow-md">
+                  <img
+                    src={m.imgSrc}
+                    alt={`Portrait of ${m.name}`}
+                    className="rounded-full object-cover w-28 h-28 md:w-32 md:h-32 shadow-sm"
+                    loading="lazy"
+                  />
+                </div>
               </div>
-              <div className="text-center">
-                <h3 className="text-xl font-semibold text-foreground mb-1">{m.name}</h3>
+
+              <div className="text-center mt-2">
+                <h3 className="text-lg md:text-xl font-semibold text-foreground mb-1">{m.name}</h3>
                 <p className="text-sm text-primary mb-2">{m.title}</p>
-                {m.bio && <p className="text-sm text-muted-foreground">{m.bio}</p>}
+                {m.bio && <p className="text-sm text-muted-foreground leading-snug">{m.bio}</p>}
                 <div className="mt-3 flex items-center justify-center space-x-3">
                   {m.linkedin && (
                     <a href={m.linkedin} className="text-primary hover:underline text-sm">

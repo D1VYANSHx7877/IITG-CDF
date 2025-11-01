@@ -21,7 +21,7 @@ A modern, responsive website for IIT Gandhinagar's Postgraduate Diploma Programs
 
 ```bash
 # Clone the repository
-git clone https://github.com/D1VYANSHx7877/IITG-CDF.git
+git clone https://github.com/your-username/IITG-CDF.git
 cd IITG-CDF
 
 # Install dependencies

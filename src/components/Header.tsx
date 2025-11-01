@@ -26,18 +26,30 @@ const Header = () => {
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center group">
-            <div className="flex items-center">
-              <div className="w-[54px] sm:w-[72px] h-auto rounded-lg flex items-center justify-center shadow-soft group-hover:shadow-medium transition-all duration-300 overflow-hidden">
-                <img
-                  src="/logo.png"
-                  alt="IIT Gandhinagar logo"
-                  className="w-full h-auto object-contain p-1"
-                  loading="lazy"
-                  decoding="async"
-                />
+            <div className="flex items-center gap-2">
+                                          <div className="flex items-center -ml-2">
+                <div className="w-[40px] sm:w-[52px] md:w-[62px] h-[40px] sm:h-[52px] md:h-[62px] rounded-full flex items-center justify-center bg-white shadow-soft group-hover:shadow-medium transition-all duration-300 overflow-hidden">
+                  <img
+                    src="public/logo.png"
+                    alt="IIT Gandhinagar CDF logo"
+                    className="w-full h-full object-contain p-1"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <div className="mx-2 w-px h-8 bg-border/50"></div>
+                <div className="w-[40px] sm:w-[52px] md:w-[62px] h-[40px] sm:h-[52px] md:h-[62px] rounded-full flex items-center justify-center bg-white shadow-soft group-hover:shadow-medium transition-all duration-300 overflow-hidden">
+                  <img
+                    src="public/logo2.png"
+                    alt="IIT Gandhinagar logo"
+                    className="w-full h-full object-contain p-1"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
               </div>
-              <div className="ml-3 hidden sm:flex flex-col">
-                <h1 className="text-base lg:text-lg font-bold text-foreground leading-tight">IIT Gandhinagar</h1>
+              <div className="ml-3 flex flex-col justify-center">
+                <h1 className="text-sm lg:text-base font-bold text-foreground leading-tight truncate">IIT Gandhinagar</h1>
                 <p className="text-xs text-muted-foreground">CDF Programs</p>
               </div>
             </div>

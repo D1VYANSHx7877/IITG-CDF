@@ -1,10 +1,14 @@
-import { MapPin, Mail, Phone, Clock, Plane, Train, Car, Linkedin, Twitter, Facebook, Instagram, Youtube } from "lucide-react";
+import { MapPin, Mail, Phone, Clock, Plane, Train, Car, Linkedin, Twitter, Facebook, Instagram, Youtube, SendIcon } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ContactCard from "@/components/ContactCard";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { Card, CardContent } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Label } from "@/components/ui/label";
+import { toast } from "@/components/ui/use-toast";
 
 const Contact = () => {
   return (
@@ -58,8 +62,8 @@ const Contact = () => {
                 icon={<Phone className="w-6 h-6" />}
                 title="Phone"
                 content={[
-                  "Main Office: +91-79-2395-XXXX",
-                  "Admissions Helpline: +91-XXXXX-XXXXX"
+                  "Main Office: +91-79-2395-1100",
+                  "Admissions Helpline: +91-79239-51100"
                 ]}
               />
               <ContactCard
@@ -73,6 +77,73 @@ const Contact = () => {
                   "9:00 AM – 1:00 PM IST"
                 ]}
               />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Form Section */}
+      <section className="py-16 lg:py-24 bg-muted/50">
+        <div className="container mx-auto px-4 lg:px-8">
+          <div className="max-w-3xl mx-auto">
+            <div className="bg-card shadow-large rounded-2xl p-8 md:p-12">
+              <h2 className="text-2xl lg:text-3xl font-bold text-foreground mb-6 text-center">
+                Send us a Message
+              </h2>
+              <p className="text-muted-foreground text-center mb-8">
+                Have a question about our programs? Fill out the form below and we'll get back to you as soon as possible.
+              </p>
+              <form onSubmit={(e) => {
+                e.preventDefault();
+                toast({
+                  title: "Message sent successfully",
+                  description: "We'll get back to you within 24-48 hours.",
+                });
+              }} className="space-y-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div className="space-y-2">
+                    <Label htmlFor="name">Full Name</Label>
+                    <Input
+                      id="name"
+                      placeholder="Enter your full name"
+                      required
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="email">Email Address</Label>
+                    <Input
+                      id="email"
+                      type="email"
+                      placeholder="Enter your email"
+                      required
+                    />
+                  </div>
+                </div>
+                
+                <div className="space-y-2">
+                  <Label htmlFor="subject">Subject</Label>
+                  <Input
+                    id="subject"
+                    placeholder="What is your message about?"
+                    required
+                  />
+                </div>
+
+                <div className="space-y-2">
+                  <Label htmlFor="message">Message</Label>
+                  <Textarea
+                    id="message"
+                    placeholder="Type your message here..."
+                    className="min-h-[150px]"
+                    required
+                  />
+                </div>
+
+                <Button type="submit" className="w-full bg-gradient-primary hover:opacity-90" size="lg">
+                  <SendIcon className="w-4 h-4 mr-2" />
+                  Send Message
+                </Button>
+              </form>
             </div>
           </div>
         </div>
@@ -155,19 +226,44 @@ const Contact = () => {
               Follow us on social media for the latest updates, program announcements, and success stories.
             </p>
             <div className="flex justify-center space-x-6">
-              <a href="#" className="w-12 h-12 bg-gradient-primary rounded-full flex items-center justify-center hover:scale-110 transition-transform">
+              <a 
+                href="#" 
+                className="w-12 h-12 bg-gradient-primary rounded-full flex items-center justify-center hover:scale-110 transition-transform"
+                title="Follow us on LinkedIn"
+                aria-label="Visit our LinkedIn profile"
+              >
                 <Linkedin className="w-6 h-6 text-primary-foreground" />
               </a>
-              <a href="#" className="w-12 h-12 bg-gradient-primary rounded-full flex items-center justify-center hover:scale-110 transition-transform">
+              <a 
+                href="#" 
+                className="w-12 h-12 bg-gradient-primary rounded-full flex items-center justify-center hover:scale-110 transition-transform"
+                title="Follow us on Twitter"
+                aria-label="Visit our Twitter profile"
+              >
                 <Twitter className="w-6 h-6 text-primary-foreground" />
               </a>
-              <a href="#" className="w-12 h-12 bg-gradient-primary rounded-full flex items-center justify-center hover:scale-110 transition-transform">
+              <a 
+                href="#" 
+                className="w-12 h-12 bg-gradient-primary rounded-full flex items-center justify-center hover:scale-110 transition-transform"
+                title="Follow us on Facebook"
+                aria-label="Visit our Facebook page"
+              >
                 <Facebook className="w-6 h-6 text-primary-foreground" />
               </a>
-              <a href="#" className="w-12 h-12 bg-gradient-primary rounded-full flex items-center justify-center hover:scale-110 transition-transform">
+              <a 
+                href="#" 
+                className="w-12 h-12 bg-gradient-primary rounded-full flex items-center justify-center hover:scale-110 transition-transform"
+                title="Follow us on Instagram"
+                aria-label="Visit our Instagram profile"
+              >
                 <Instagram className="w-6 h-6 text-primary-foreground" />
               </a>
-              <a href="#" className="w-12 h-12 bg-gradient-primary rounded-full flex items-center justify-center hover:scale-110 transition-transform">
+              <a 
+                href="#" 
+                className="w-12 h-12 bg-gradient-primary rounded-full flex items-center justify-center hover:scale-110 transition-transform"
+                title="Subscribe to our YouTube channel"
+                aria-label="Visit our YouTube channel"
+              >
                 <Youtube className="w-6 h-6 text-primary-foreground" />
               </a>
             </div>

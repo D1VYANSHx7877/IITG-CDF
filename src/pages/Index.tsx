@@ -5,7 +5,7 @@ import Footer from "@/components/Footer";
 import ProgramCard from "@/components/ProgramCard";
 import { Button } from "@/components/ui/button";
 import Board from "@/components/Board";
-import BrandGrid from "@/components/BrandGrid";
+import LogoMarquee from "@/components/LogoMarquee";
 import styles from "./Index.module.css";
 
 const Index = () => {
@@ -122,18 +122,24 @@ const Index = () => {
               description="Learn to design, implement, and scale data pipelines and machine learning infrastructure with hands-on expertise in AutoML, MLOps, and cloud platforms."
               delay={0}
               brochure="/brochures/data-science.pdf"
+              imgSrc="/programs/DSE.jpg"
+              showImage={false}
             />
             <ProgramCard
               title="Software Development with GenAI"
               description="Master modern DevOps, cloud-native architectures, and AI-augmented software applications with generative and agentic AI techniques."
               delay={100}
               brochure="/brochures/software-genai.pdf"
+              imgSrc="/programs/SEAI.JPG"
+              showImage={false}
             />
             <ProgramCard
               title="AI & Agentic AI Engineering"
               description="Deep dive into advanced AI methodologies, agentic systems, ethical AI, and responsible governance for scalable AI solutions."
               delay={200}
               brochure="/brochures/ai-agentic.pdf"
+              imgSrc="/programs/AIA.jpg"
+              showImage={false}
             />
           </div>
         </div>
@@ -143,22 +149,48 @@ const Index = () => {
       <section className="bg-muted/30">
         <Board />
         
-        {/* Add Partner Brands and Trusted-by sections on the homepage below Board */}
-        <BrandGrid
-          title="OUR HIRING PARTNERS"
-          subtitle="Leading organizations that collaborate with IIT Gandhinagar to empower future-ready talent."
-          brands={['Honeywell','Amazon','Tesla','LSE','JP Morgan','EY','Trend Micro','Accenture','Nestle','BlackRock','Deloitte','Apple']}
-          cols="grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4"
-          bgClass="bg-background"
-        />
+        {/* Partner logos: two rows for Hiring Partners and one row for Trusted Companies.
+            Use explicit filenames from the public folders so logos load reliably. */}
+        {(() => {
+          const hiringPaths = [
+            '/OUR%20HIRING%20PARTNERS/Apple.svg',
+            '/OUR%20HIRING%20PARTNERS/BlackRock.svg',
+            '/OUR%20HIRING%20PARTNERS/Deloitte..svg',
+            '/OUR%20HIRING%20PARTNERS/EY.svg',
+            '/OUR%20HIRING%20PARTNERS/JPM.svg',
+            '/OUR%20HIRING%20PARTNERS/LSE.svg',
+            '/OUR%20HIRING%20PARTNERS/MicroTrend.svg',
+            '/OUR%20HIRING%20PARTNERS/Nestle.svg',
+            '/OUR%20HIRING%20PARTNERS/TESLA.svg',
+          ];
 
-        <BrandGrid
-          title="Trusted by Leading Companies"
-          subtitle="Our graduates are trusted by these industry leaders."
-          brands={['Honeywell','Amazon','Google','Microsoft','Siemens','Infosys','Accenture','IBM']}
-          cols="grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-8"
-          bgClass="bg-background"
-        />
+          const trustedPaths = [
+            '/TRUSTED%20BY%20LEADING%20COMAPNIES/Accenture.svg',
+            '/TRUSTED%20BY%20LEADING%20COMAPNIES/Amazon.svg',
+            '/TRUSTED%20BY%20LEADING%20COMAPNIES/Google.svg',
+            '/TRUSTED%20BY%20LEADING%20COMAPNIES/Honeywell.svg',
+            '/TRUSTED%20BY%20LEADING%20COMAPNIES/IBM.svg',
+            '/TRUSTED%20BY%20LEADING%20COMAPNIES/Infosys.svg',
+            '/TRUSTED%20BY%20LEADING%20COMAPNIES/Microsoft.svg',
+            '/TRUSTED%20BY%20LEADING%20COMAPNIES/Siemens.svg',
+          ];
+
+          return (
+            <div className="space-y-8">
+              <div className="bg-card rounded-2xl p-6">
+                <h3 className="text-center text-3xl lg:text-4xl font-extrabold text-foreground/90 mb-4">Our Hiring Partners</h3>
+                <p className="text-center text-sm text-muted-foreground mb-4">Organizations that collaborate with IIT Gandhinagar to empower future-ready talent.</p>
+                <LogoMarquee hiringTop={{ logos: hiringPaths, leftToRight: true, duration: 18 }} hiringBottom={{ logos: hiringPaths, leftToRight: false, duration: 20 }} />
+              </div>
+
+              <div className="bg-card rounded-2xl p-6">
+                <h3 className="text-center text-3xl lg:text-4xl font-extrabold text-foreground/90 mb-4">Trusted by Leading Companies</h3>
+                <p className="text-center text-sm text-muted-foreground mb-4">Our graduates are trusted by these industry leaders.</p>
+                <LogoMarquee trusted={{ logos: trustedPaths, leftToRight: true, duration: 22 }} />
+              </div>
+            </div>
+          );
+        })()}
       </section>
 
       {/* CTA Section */}
