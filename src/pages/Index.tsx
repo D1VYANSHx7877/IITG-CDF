@@ -7,7 +7,6 @@ import ProgramCard from "@/components/ProgramCard";
 import { Button } from "@/components/ui/button";
 import Board from "@/components/Board";
 import LogoMarquee from "@/components/LogoMarquee";
-import styles from "./Index.module.css";
 import CarouselBackground from "@/components/CarouselBackground";
 
 const Index = () => {
@@ -18,8 +17,6 @@ const Index = () => {
       {/* Hero Section */}
       <section className="relative pt-24 pb-20 lg:pt-32 lg:pb-32 overflow-hidden">
         <CarouselBackground />
-
-        {/* Background gradients */}
         <div className="absolute inset-0 bg-gradient-hero opacity-10" />
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/50 to-background" />
 
@@ -43,11 +40,12 @@ const Index = () => {
               Generative AI.
             </p>
 
-            {/* Buttons - same style, smaller size */}
-            <div className="flex flex-col sm:flex-row items-center justify-center space-y-3 sm:space-y-0 sm:space-x-4 animate-fade-in-up">
+            {/* ✅ Compact Buttons */}
+            <div className="flex flex-col sm:flex-row items-center justify-center space-y-3 sm:space-y-0 sm:space-x-3">
               <Button
                 asChild
-                className="bg-gradient-primary hover:opacity-90 shadow-medium group px-6 py-2 text-sm sm:text-base w-auto"
+                size="sm"
+                className="bg-gradient-primary hover:opacity-90 shadow-medium group px-5 py-2 text-sm font-medium rounded-full"
               >
                 <Link to="/admissions" className="flex items-center space-x-2">
                   <span>Apply Now</span>
@@ -57,8 +55,9 @@ const Index = () => {
 
               <Button
                 asChild
+                size="sm"
                 variant="outline"
-                className="border-2 hover:bg-muted px-6 py-2 text-sm sm:text-base w-auto"
+                className="border-2 hover:bg-muted px-5 py-2 text-sm font-medium rounded-full"
               >
                 <Link to="/programs">Explore Programs</Link>
               </Button>
@@ -104,36 +103,45 @@ const Index = () => {
             </p>
           </div>
 
+          {/* ✅ Corrected Program Links */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 max-w-7xl mx-auto">
-            <ProgramCard
-              title="Gen AI Powered Data Science and Engineering"
-              description="Learn to design, implement, and scale data pipelines and machine learning infrastructure with hands-on expertise in AutoML, MLOps, and cloud platforms."
-              delay={0}
-              brochure="/brochures/data-science.pdf"
-              imgSrc="/programs/DSE.jpg"
-              showImage={false}
-            />
-            <ProgramCard
-              title="Gen AI Powered Software Engineering with Cloud"
-              description="Master modern DevOps, cloud-native architectures, and AI-augmented software applications with generative and agentic AI techniques."
-              delay={100}
-              brochure="/brochures/software-genai.pdf"
-              imgSrc="/programs/SEAI.JPG"
-              showImage={false}
-            />
-            <ProgramCard
-              title="Gen AI Powered AIML / AgenticAI Engineering"
-              description="Deep dive into advanced AI methodologies, agentic systems, ethical AI, and responsible governance for scalable AI solutions."
-              delay={200}
-              brochure="/brochures/ai-agentic.pdf"
-              imgSrc="/programs/AIA.jpg"
-              showImage={false}
-            />
+            <Link to="/gen-ai-data-science">
+              <ProgramCard
+                title="Gen AI Powered Data Science and Engineering"
+                description="Learn to design, implement, and scale data pipelines and machine learning infrastructure with hands-on expertise in AutoML, MLOps, and cloud platforms."
+                delay={0}
+                brochure="/brochures/data-science.pdf"
+                imgSrc="/programs/DSE.jpg"
+                showImage={false}
+              />
+            </Link>
+
+            <Link to="/gen-ai-software-cloud">
+              <ProgramCard
+                title="Gen AI Powered Software Engineering with Cloud"
+                description="Master modern DevOps, cloud-native architectures, and AI-augmented software applications with generative and agentic AI techniques."
+                delay={100}
+                brochure="/brochures/software-genai.pdf"
+                imgSrc="/programs/SEAI.JPG"
+                showImage={false}
+              />
+            </Link>
+
+            <Link to="/gen-ai-agentic-aiml">
+              <ProgramCard
+                title="Gen AI Powered AIML / AgenticAI Engineering"
+                description="Deep dive into advanced AI methodologies, agentic systems, ethical AI, and responsible governance for scalable AI solutions."
+                delay={200}
+                brochure="/brochures/ai-agentic.pdf"
+                imgSrc="/programs/AIA.jpg"
+                showImage={false}
+              />
+            </Link>
           </div>
         </div>
       </section>
 
-      {/* Board of Directors & Partners */}
+      {/* Board Section */}
       <section className="bg-muted/30">
         <Board />
 
@@ -164,7 +172,9 @@ const Index = () => {
           return (
             <div className="space-y-8">
               <div className="bg-card rounded-2xl p-6">
-                <h3 className="text-center text-3xl lg:text-4xl font-extrabold text-foreground/90 mb-4">Our Hiring Partners</h3>
+                <h3 className="text-center text-3xl lg:text-4xl font-extrabold text-foreground/90 mb-4">
+                  Our Hiring Partners
+                </h3>
                 <p className="text-center text-sm text-muted-foreground mb-4">
                   Organizations that collaborate with IIT Gandhinagar to empower future-ready talent.
                 </p>
@@ -172,7 +182,9 @@ const Index = () => {
               </div>
 
               <div className="bg-card rounded-2xl p-6">
-                <h3 className="text-center text-3xl lg:text-4xl font-extrabold text-foreground/90 mb-4">Trusted by Leading Companies</h3>
+                <h3 className="text-center text-3xl lg:text-4xl font-extrabold text-foreground/90 mb-4">
+                  Trusted by Leading Companies
+                </h3>
                 <p className="text-center text-sm text-muted-foreground mb-4">
                   Our graduates are trusted by these industry leaders.
                 </p>
@@ -196,7 +208,8 @@ const Index = () => {
             </p>
             <Button
               asChild
-              className="bg-white text-primary hover:bg-white/90 shadow-large group px-6 py-2 text-sm sm:text-base w-auto"
+              size="sm"
+              className="bg-white text-primary hover:bg-white/90 shadow-large group px-6 py-2 text-sm font-semibold rounded-full"
             >
               <Link to="/admissions" className="flex items-center justify-center space-x-2">
                 <span>Apply Now</span>
